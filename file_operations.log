@@ -9355,3 +9355,273 @@
 2025-07-01 10:40:34,417 - INFO -  * Debugger PIN: 846-591-789
 2025-07-01 10:40:39,012 - INFO - 127.0.0.1 - - [01/Jul/2025 10:40:39] "GET / HTTP/1.1" 200 -
 2025-07-01 10:40:39,601 - INFO - 127.0.0.1 - - [01/Jul/2025 10:40:39] "GET /static/logoBlanco.png HTTP/1.1" 200 -
+2025-07-01 11:03:14,258 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8000
+ * Running on http://10.39.90.243:8000
+2025-07-01 11:03:14,258 - INFO - [33mPress CTRL+C to quit[0m
+2025-07-01 11:03:14,268 - INFO -  * Restarting with stat
+2025-07-01 11:03:16,028 - WARNING -  * Debugger is active!
+2025-07-01 11:03:16,042 - INFO -  * Debugger PIN: 854-049-237
+2025-07-01 11:03:24,041 - INFO - 127.0.0.1 - - [01/Jul/2025 11:03:24] "GET / HTTP/1.1" 200 -
+2025-07-01 11:03:24,294 - INFO - 127.0.0.1 - - [01/Jul/2025 11:03:24] "GET /static/logoBlanco.png HTTP/1.1" 200 -
+2025-07-01 11:03:24,405 - INFO - 127.0.0.1 - - [01/Jul/2025 11:03:24] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-07-01 11:03:58,557 - INFO - Conexión a la base de datos exitosa.
+2025-07-01 11:03:59,390 - INFO - Conexión a la base de datos exitosa.
+2025-07-01 11:03:59,723 - INFO - 127.0.0.1 - - [01/Jul/2025 11:03:59] "[32mPOST / HTTP/1.1[0m" 302 -
+2025-07-01 11:03:59,784 - INFO - 127.0.0.1 - - [01/Jul/2025 11:03:59] "GET /paginaInicial HTTP/1.1" 200 -
+2025-07-01 11:03:59,872 - INFO - 127.0.0.1 - - [01/Jul/2025 11:03:59] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-07-01 11:04:18,382 - INFO - 127.0.0.1 - - [01/Jul/2025 11:04:18] "GET /crear_plantilla HTTP/1.1" 200 -
+2025-07-01 11:04:18,450 - INFO - 127.0.0.1 - - [01/Jul/2025 11:04:18] "GET /static/CrearPlantilla.css HTTP/1.1" 200 -
+2025-07-01 11:04:18,450 - INFO - 127.0.0.1 - - [01/Jul/2025 11:04:18] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-07-01 11:04:18,465 - INFO - 127.0.0.1 - - [01/Jul/2025 11:04:18] "GET /static/CrearPlantilla.js HTTP/1.1" 200 -
+2025-07-01 11:04:22,308 - INFO - 127.0.0.1 - - [01/Jul/2025 11:04:22] "GET /paginaInicial HTTP/1.1" 200 -
+2025-07-01 11:04:22,358 - INFO - 127.0.0.1 - - [01/Jul/2025 11:04:22] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-07-01 11:04:23,408 - INFO - Conexión a la base de datos exitosa.
+2025-07-01 11:04:23,673 - INFO - 127.0.0.1 - - [01/Jul/2025 11:04:23] "GET /cargar_plantilla HTTP/1.1" 200 -
+2025-07-01 11:04:23,724 - INFO - 127.0.0.1 - - [01/Jul/2025 11:04:23] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-07-01 11:04:25,127 - INFO - 127.0.0.1 - - [01/Jul/2025 11:04:25] "GET /paginaInicial HTTP/1.1" 200 -
+2025-07-01 11:04:25,170 - INFO - 127.0.0.1 - - [01/Jul/2025 11:04:25] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-07-01 11:04:25,843 - INFO - Conexión a la base de datos exitosa.
+2025-07-01 11:04:26,199 - INFO - 127.0.0.1 - - [01/Jul/2025 11:04:26] "GET /validador HTTP/1.1" 200 -
+2025-07-01 11:04:26,272 - INFO - 127.0.0.1 - - [01/Jul/2025 11:04:26] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-07-01 11:04:26,279 - INFO - 127.0.0.1 - - [01/Jul/2025 11:04:26] "GET /static/validador.css HTTP/1.1" 200 -
+2025-07-01 11:04:26,285 - INFO - 127.0.0.1 - - [01/Jul/2025 11:04:26] "GET /static/validador.js HTTP/1.1" 200 -
+2025-07-01 11:04:33,763 - INFO - Conexión a la base de datos exitosa.
+2025-07-01 11:04:34,069 - INFO - 127.0.0.1 - - [01/Jul/2025 11:04:34] "GET /filtro_informe HTTP/1.1" 200 -
+2025-07-01 11:04:36,109 - INFO - Conexión a la base de datos exitosa.
+2025-07-01 11:04:36,543 - INFO - 127.0.0.1 - - [01/Jul/2025 11:04:36] "GET /ver_resultados?usuario=&fecha_inicio=&fecha_fin= HTTP/1.1" 200 -
+2025-07-01 11:04:46,928 - INFO - Conexión a la base de datos exitosa.
+2025-07-01 11:04:47,344 - INFO - 127.0.0.1 - - [01/Jul/2025 11:04:47] "GET /ver_resultados?usuario=&fecha_inicio=&fecha_fin=&archivo=&proceso=&fecha_datos_inicio=&fecha_datos_fin=&tipo_reporte=error HTTP/1.1" 200 -
+2025-07-01 11:05:05,511 - INFO - Conexión a la base de datos exitosa.
+2025-07-01 11:05:05,745 - INFO - 127.0.0.1 - - [01/Jul/2025 11:05:05] "GET /filtro_informe HTTP/1.1" 200 -
+2025-07-01 11:23:27,025 - INFO -  * Detected change in 'c:\\wamp64\\www\\ValidadorDatos\\app\\routeDIv.py', reloading
+2025-07-01 11:23:27,828 - INFO -  * Restarting with stat
+2025-07-01 11:23:30,230 - WARNING -  * Debugger is active!
+2025-07-01 11:23:30,261 - INFO -  * Debugger PIN: 854-049-237
+2025-07-01 11:24:14,225 - INFO -  * Detected change in 'c:\\wamp64\\www\\ValidadorDatos\\app\\routeDIv.py', reloading
+2025-07-01 11:24:14,414 - INFO -  * Restarting with stat
+2025-07-01 11:24:15,843 - WARNING -  * Debugger is active!
+2025-07-01 11:24:15,843 - INFO -  * Debugger PIN: 854-049-237
+2025-07-01 11:27:23,361 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8000
+ * Running on http://10.39.90.243:8000
+2025-07-01 11:27:23,362 - INFO - [33mPress CTRL+C to quit[0m
+2025-07-01 11:27:23,362 - INFO -  * Restarting with stat
+2025-07-01 11:27:24,594 - WARNING -  * Debugger is active!
+2025-07-01 11:27:24,596 - INFO -  * Debugger PIN: 854-049-237
+2025-07-01 11:27:33,188 - INFO - 127.0.0.1 - - [01/Jul/2025 11:27:33] "GET / HTTP/1.1" 200 -
+2025-07-01 11:27:33,565 - INFO - 127.0.0.1 - - [01/Jul/2025 11:27:33] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-07-01 11:28:38,362 - INFO - Conexión a la base de datos exitosa.
+2025-07-01 11:28:38,613 - INFO - 127.0.0.1 - - [01/Jul/2025 11:28:38] "[32mPOST / HTTP/1.1[0m" 302 -
+2025-07-01 11:28:38,664 - INFO - 127.0.0.1 - - [01/Jul/2025 11:28:38] "GET / HTTP/1.1" 200 -
+2025-07-01 11:28:38,706 - INFO - 127.0.0.1 - - [01/Jul/2025 11:28:38] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-07-01 11:30:51,431 - INFO - Conexión a la base de datos exitosa.
+2025-07-01 11:30:51,674 - INFO - 127.0.0.1 - - [01/Jul/2025 11:30:51] "[32mPOST / HTTP/1.1[0m" 302 -
+2025-07-01 11:30:51,698 - INFO - 127.0.0.1 - - [01/Jul/2025 11:30:51] "GET / HTTP/1.1" 200 -
+2025-07-01 11:30:51,724 - INFO - 127.0.0.1 - - [01/Jul/2025 11:30:51] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-07-01 11:31:21,430 - INFO - Conexión a la base de datos exitosa.
+2025-07-01 11:31:21,664 - INFO - 127.0.0.1 - - [01/Jul/2025 11:31:21] "[32mPOST / HTTP/1.1[0m" 302 -
+2025-07-01 11:31:21,697 - INFO - 127.0.0.1 - - [01/Jul/2025 11:31:21] "GET / HTTP/1.1" 200 -
+2025-07-01 11:31:21,733 - INFO - 127.0.0.1 - - [01/Jul/2025 11:31:21] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-07-01 11:33:18,374 - INFO - Conexión a la base de datos exitosa.
+2025-07-01 11:33:18,611 - INFO - 127.0.0.1 - - [01/Jul/2025 11:33:18] "[32mPOST / HTTP/1.1[0m" 302 -
+2025-07-01 11:33:18,624 - INFO - 127.0.0.1 - - [01/Jul/2025 11:33:18] "GET / HTTP/1.1" 200 -
+2025-07-01 11:33:18,653 - INFO - 127.0.0.1 - - [01/Jul/2025 11:33:18] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-07-01 11:33:22,771 - INFO - 127.0.0.1 - - [01/Jul/2025 11:33:22] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-07-01 11:33:52,397 - INFO - Conexión a la base de datos exitosa.
+2025-07-01 11:33:53,164 - INFO - Conexión a la base de datos exitosa.
+2025-07-01 11:33:53,497 - INFO - 127.0.0.1 - - [01/Jul/2025 11:33:53] "[32mPOST / HTTP/1.1[0m" 302 -
+2025-07-01 11:33:53,530 - INFO - 127.0.0.1 - - [01/Jul/2025 11:33:53] "GET /paginaInicial HTTP/1.1" 200 -
+2025-07-01 11:33:53,601 - INFO - 127.0.0.1 - - [01/Jul/2025 11:33:53] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-07-01 11:33:55,680 - INFO - 127.0.0.1 - - [01/Jul/2025 11:33:55] "[32mGET /cerrar_sesion HTTP/1.1[0m" 302 -
+2025-07-01 11:33:55,716 - INFO - 127.0.0.1 - - [01/Jul/2025 11:33:55] "GET / HTTP/1.1" 200 -
+2025-07-01 11:33:55,936 - INFO - 127.0.0.1 - - [01/Jul/2025 11:33:55] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-07-01 11:34:15,430 - INFO - Conexión a la base de datos exitosa.
+2025-07-01 11:34:16,213 - INFO - Conexión a la base de datos exitosa.
+2025-07-01 11:34:16,513 - INFO - 127.0.0.1 - - [01/Jul/2025 11:34:16] "[32mPOST / HTTP/1.1[0m" 302 -
+2025-07-01 11:34:16,547 - INFO - 127.0.0.1 - - [01/Jul/2025 11:34:16] "GET /paginaInicial HTTP/1.1" 200 -
+2025-07-01 11:34:16,601 - INFO - 127.0.0.1 - - [01/Jul/2025 11:34:16] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-07-01 11:34:19,807 - INFO - Conexión a la base de datos exitosa.
+2025-07-01 11:34:20,030 - INFO - 127.0.0.1 - - [01/Jul/2025 11:34:20] "GET /filtro_informe HTTP/1.1" 200 -
+2025-07-01 11:34:57,980 - INFO - Conexión a la base de datos exitosa.
+2025-07-01 11:34:58,480 - INFO - 127.0.0.1 - - [01/Jul/2025 11:34:58] "GET /ver_resultados?usuario=luise.olaya@urosario.edu.co&fecha_inicio=&fecha_fin= HTTP/1.1" 200 -
+2025-07-01 11:50:50,888 - INFO - Conexión a la base de datos exitosa.
+2025-07-01 11:50:51,130 - INFO - 127.0.0.1 - - [01/Jul/2025 11:50:51] "GET /filtro_informe HTTP/1.1" 200 -
+2025-07-01 11:50:57,355 - INFO - 127.0.0.1 - - [01/Jul/2025 11:50:57] "GET /paginaInicial HTTP/1.1" 200 -
+2025-07-01 11:50:57,398 - INFO - 127.0.0.1 - - [01/Jul/2025 11:50:57] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-07-01 11:51:15,892 - INFO - Conexión a la base de datos exitosa.
+2025-07-01 11:51:16,247 - INFO - 127.0.0.1 - - [01/Jul/2025 11:51:16] "GET /validador HTTP/1.1" 200 -
+2025-07-01 11:51:16,294 - INFO - 127.0.0.1 - - [01/Jul/2025 11:51:16] "[36mGET /static/validador.js HTTP/1.1[0m" 304 -
+2025-07-01 11:51:16,295 - INFO - 127.0.0.1 - - [01/Jul/2025 11:51:16] "[36mGET /static/validador.css HTTP/1.1[0m" 304 -
+2025-07-01 11:51:16,295 - INFO - 127.0.0.1 - - [01/Jul/2025 11:51:16] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-07-01 11:54:00,655 - INFO - 127.0.0.1 - - [01/Jul/2025 11:54:00] "GET /crear_plantilla HTTP/1.1" 200 -
+2025-07-01 11:54:00,703 - INFO - 127.0.0.1 - - [01/Jul/2025 11:54:00] "[36mGET /static/CrearPlantilla.css HTTP/1.1[0m" 304 -
+2025-07-01 11:54:00,705 - INFO - 127.0.0.1 - - [01/Jul/2025 11:54:00] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-07-01 11:54:00,708 - INFO - 127.0.0.1 - - [01/Jul/2025 11:54:00] "[36mGET /static/CrearPlantilla.js HTTP/1.1[0m" 304 -
+2025-07-01 11:54:14,885 - INFO - 127.0.0.1 - - [01/Jul/2025 11:54:14] "[32mPOST /upload_excel HTTP/1.1[0m" 302 -
+2025-07-01 11:54:17,629 - INFO - 127.0.0.1 - - [01/Jul/2025 11:54:17] "GET /mostrar_tabla HTTP/1.1" 200 -
+2025-07-01 11:54:17,684 - INFO - 127.0.0.1 - - [01/Jul/2025 11:54:17] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-07-01 11:54:23,722 - INFO - Conexión a la base de datos exitosa.
+2025-07-01 11:54:24,019 - INFO - 127.0.0.1 - - [01/Jul/2025 11:54:24] "GET /mostrar_tabla?hoja=DetalleParticipantes2019-2024(2 HTTP/1.1" 200 -
+2025-07-01 11:54:24,131 - INFO - 127.0.0.1 - - [01/Jul/2025 11:54:24] "GET /static/EditarPlantilla.css HTTP/1.1" 200 -
+2025-07-01 11:54:24,131 - INFO - 127.0.0.1 - - [01/Jul/2025 11:54:24] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-07-01 11:54:24,133 - INFO - 127.0.0.1 - - [01/Jul/2025 11:54:24] "GET /static/EditarPlantilla.js HTTP/1.1" 200 -
+2025-07-01 11:54:35,776 - INFO - 127.0.0.1 - - [01/Jul/2025 11:54:35] "GET /expresiones HTTP/1.1" 200 -
+2025-07-01 11:54:35,844 - INFO - 127.0.0.1 - - [01/Jul/2025 11:54:35] "GET /static/IndexEx.css HTTP/1.1" 200 -
+2025-07-01 11:54:35,847 - INFO - 127.0.0.1 - - [01/Jul/2025 11:54:35] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-07-01 12:27:39,829 - INFO - 127.0.0.1 - - [01/Jul/2025 12:27:39] "[35m[1mGET /expresiones HTTP/1.1[0m" 500 -
+2025-07-01 12:27:39,945 - INFO - 127.0.0.1 - - [01/Jul/2025 12:27:39] "GET /expresiones?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2025-07-01 12:27:39,946 - INFO - 127.0.0.1 - - [01/Jul/2025 12:27:39] "GET /expresiones?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2025-07-01 12:27:40,063 - INFO - 127.0.0.1 - - [01/Jul/2025 12:27:40] "GET /expresiones?__debugger__=yes&cmd=resource&f=console.png&s=7aGLfe9QY6yXLlW9uXiQ HTTP/1.1" 200 -
+2025-07-01 12:27:40,225 - INFO - 127.0.0.1 - - [01/Jul/2025 12:27:40] "GET /expresiones?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2025-07-01 12:29:18,330 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8000
+ * Running on http://10.39.90.243:8000
+2025-07-01 12:29:18,330 - INFO - [33mPress CTRL+C to quit[0m
+2025-07-01 12:29:18,330 - INFO -  * Restarting with stat
+2025-07-01 12:29:19,730 - WARNING -  * Debugger is active!
+2025-07-01 12:29:19,749 - INFO -  * Debugger PIN: 854-049-237
+2025-07-01 12:32:08,769 - INFO - 127.0.0.1 - - [01/Jul/2025 12:32:08] "GET / HTTP/1.1" 200 -
+2025-07-01 12:32:08,999 - INFO - 127.0.0.1 - - [01/Jul/2025 12:32:08] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-07-01 12:32:29,752 - INFO - Conexión a la base de datos exitosa.
+2025-07-01 12:32:30,575 - INFO - Conexión a la base de datos exitosa.
+2025-07-01 12:32:30,885 - INFO - 127.0.0.1 - - [01/Jul/2025 12:32:30] "[32mPOST / HTTP/1.1[0m" 302 -
+2025-07-01 12:32:30,946 - INFO - 127.0.0.1 - - [01/Jul/2025 12:32:30] "GET /paginaInicial HTTP/1.1" 200 -
+2025-07-01 12:32:30,994 - INFO - 127.0.0.1 - - [01/Jul/2025 12:32:30] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-07-01 12:33:23,788 - INFO - 127.0.0.1 - - [01/Jul/2025 12:33:23] "GET /crear_plantilla HTTP/1.1" 200 -
+2025-07-01 12:33:23,846 - INFO - 127.0.0.1 - - [01/Jul/2025 12:33:23] "[36mGET /static/CrearPlantilla.css HTTP/1.1[0m" 304 -
+2025-07-01 12:33:23,848 - INFO - 127.0.0.1 - - [01/Jul/2025 12:33:23] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-07-01 12:33:23,861 - INFO - 127.0.0.1 - - [01/Jul/2025 12:33:23] "[36mGET /static/CrearPlantilla.js HTTP/1.1[0m" 304 -
+2025-07-01 12:33:29,482 - INFO - 127.0.0.1 - - [01/Jul/2025 12:33:29] "[32mPOST /upload_excel HTTP/1.1[0m" 302 -
+2025-07-01 12:33:30,074 - INFO - 127.0.0.1 - - [01/Jul/2025 12:33:30] "GET /mostrar_tabla HTTP/1.1" 200 -
+2025-07-01 12:33:30,108 - INFO - 127.0.0.1 - - [01/Jul/2025 12:33:30] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-07-01 12:33:35,870 - INFO - Conexión a la base de datos exitosa.
+2025-07-01 12:33:36,138 - INFO - 127.0.0.1 - - [01/Jul/2025 12:33:36] "GET /mostrar_tabla?hoja=DetalleParticipantes2019-2024(2 HTTP/1.1" 200 -
+2025-07-01 12:33:36,189 - INFO - 127.0.0.1 - - [01/Jul/2025 12:33:36] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-07-01 12:33:36,195 - INFO - 127.0.0.1 - - [01/Jul/2025 12:33:36] "[36mGET /static/EditarPlantilla.css HTTP/1.1[0m" 304 -
+2025-07-01 12:33:36,208 - INFO - 127.0.0.1 - - [01/Jul/2025 12:33:36] "[36mGET /static/EditarPlantilla.js HTTP/1.1[0m" 304 -
+2025-07-01 12:34:11,352 - INFO - 127.0.0.1 - - [01/Jul/2025 12:34:11] "GET /expresiones HTTP/1.1" 200 -
+2025-07-01 12:34:11,419 - INFO - 127.0.0.1 - - [01/Jul/2025 12:34:11] "[36mGET /static/IndexEx.css HTTP/1.1[0m" 304 -
+2025-07-01 12:34:11,420 - INFO - 127.0.0.1 - - [01/Jul/2025 12:34:11] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-07-01 12:37:01,107 - INFO - 127.0.0.1 - - [01/Jul/2025 12:37:01] "GET /expresiones HTTP/1.1" 200 -
+2025-07-01 12:37:01,195 - INFO - 127.0.0.1 - - [01/Jul/2025 12:37:01] "[36mGET /static/IndexEx.css HTTP/1.1[0m" 304 -
+2025-07-01 12:37:01,196 - INFO - 127.0.0.1 - - [01/Jul/2025 12:37:01] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-07-01 13:53:51,406 - INFO - 127.0.0.1 - - [01/Jul/2025 13:53:51] "[35m[1mGET /expresiones HTTP/1.1[0m" 500 -
+2025-07-01 13:53:51,501 - INFO - 127.0.0.1 - - [01/Jul/2025 13:53:51] "[36mGET /expresiones?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-07-01 13:53:51,505 - INFO - 127.0.0.1 - - [01/Jul/2025 13:53:51] "[36mGET /expresiones?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-07-01 13:53:51,596 - INFO - 127.0.0.1 - - [01/Jul/2025 13:53:51] "GET /expresiones?__debugger__=yes&cmd=resource&f=console.png&s=1SlR6Zzvi63s0O8GbdC7 HTTP/1.1" 200 -
+2025-07-01 13:53:51,763 - INFO - 127.0.0.1 - - [01/Jul/2025 13:53:51] "[36mGET /expresiones?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-07-01 13:54:03,327 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8000
+ * Running on http://10.39.90.243:8000
+2025-07-01 13:54:03,327 - INFO - [33mPress CTRL+C to quit[0m
+2025-07-01 13:54:03,332 - INFO -  * Restarting with stat
+2025-07-01 13:54:04,639 - WARNING -  * Debugger is active!
+2025-07-01 13:54:04,654 - INFO -  * Debugger PIN: 854-049-237
+2025-07-01 13:54:10,761 - INFO - 127.0.0.1 - - [01/Jul/2025 13:54:10] "GET / HTTP/1.1" 200 -
+2025-07-01 13:54:10,956 - INFO - 127.0.0.1 - - [01/Jul/2025 13:54:10] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-07-01 13:55:25,879 - INFO - Conexión a la base de datos exitosa.
+2025-07-01 13:55:26,574 - INFO - Conexión a la base de datos exitosa.
+2025-07-01 13:55:28,483 - INFO - Conexión a la base de datos exitosa.
+2025-07-01 13:55:28,782 - INFO - 127.0.0.1 - - [01/Jul/2025 13:55:28] "[32mPOST / HTTP/1.1[0m" 302 -
+2025-07-01 13:55:29,186 - INFO - Conexión a la base de datos exitosa.
+2025-07-01 13:55:29,490 - INFO - 127.0.0.1 - - [01/Jul/2025 13:55:29] "[32mPOST / HTTP/1.1[0m" 302 -
+2025-07-01 13:55:29,518 - INFO - 127.0.0.1 - - [01/Jul/2025 13:55:29] "GET /paginaInicial HTTP/1.1" 200 -
+2025-07-01 13:55:29,565 - INFO - 127.0.0.1 - - [01/Jul/2025 13:55:29] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-07-01 13:55:34,277 - INFO - 127.0.0.1 - - [01/Jul/2025 13:55:34] "GET /crear_plantilla HTTP/1.1" 200 -
+2025-07-01 13:55:34,316 - INFO - 127.0.0.1 - - [01/Jul/2025 13:55:34] "[36mGET /static/CrearPlantilla.css HTTP/1.1[0m" 304 -
+2025-07-01 13:55:34,316 - INFO - 127.0.0.1 - - [01/Jul/2025 13:55:34] "[36mGET /static/CrearPlantilla.js HTTP/1.1[0m" 304 -
+2025-07-01 13:55:34,324 - INFO - 127.0.0.1 - - [01/Jul/2025 13:55:34] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-07-01 13:55:40,679 - INFO - 127.0.0.1 - - [01/Jul/2025 13:55:40] "[32mPOST /upload_excel HTTP/1.1[0m" 302 -
+2025-07-01 13:55:41,298 - INFO - 127.0.0.1 - - [01/Jul/2025 13:55:41] "GET /mostrar_tabla HTTP/1.1" 200 -
+2025-07-01 13:55:41,329 - INFO - 127.0.0.1 - - [01/Jul/2025 13:55:41] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-07-01 13:55:44,655 - INFO - Conexión a la base de datos exitosa.
+2025-07-01 13:55:44,890 - INFO - 127.0.0.1 - - [01/Jul/2025 13:55:44] "GET /mostrar_tabla?hoja=DetalleParticipantes2019-2024(2 HTTP/1.1" 200 -
+2025-07-01 13:55:44,960 - INFO - 127.0.0.1 - - [01/Jul/2025 13:55:44] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-07-01 13:55:44,961 - INFO - 127.0.0.1 - - [01/Jul/2025 13:55:44] "[36mGET /static/EditarPlantilla.css HTTP/1.1[0m" 304 -
+2025-07-01 13:55:44,962 - INFO - 127.0.0.1 - - [01/Jul/2025 13:55:44] "[36mGET /static/EditarPlantilla.js HTTP/1.1[0m" 304 -
+2025-07-01 13:55:52,161 - INFO - 127.0.0.1 - - [01/Jul/2025 13:55:52] "GET /expresiones HTTP/1.1" 200 -
+2025-07-01 13:55:52,227 - INFO - 127.0.0.1 - - [01/Jul/2025 13:55:52] "[36mGET /static/IndexEx.css HTTP/1.1[0m" 304 -
+2025-07-01 13:55:52,227 - INFO - 127.0.0.1 - - [01/Jul/2025 13:55:52] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-07-01 13:56:40,474 - INFO - 127.0.0.1 - - [01/Jul/2025 13:56:40] "GET /expresiones HTTP/1.1" 200 -
+2025-07-01 13:56:40,515 - INFO - 127.0.0.1 - - [01/Jul/2025 13:56:40] "[36mGET /static/IndexEx.css HTTP/1.1[0m" 304 -
+2025-07-01 13:56:40,520 - INFO - 127.0.0.1 - - [01/Jul/2025 13:56:40] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-07-01 14:01:11,392 - INFO - 127.0.0.1 - - [01/Jul/2025 14:01:11] "GET /expresiones HTTP/1.1" 200 -
+2025-07-01 14:01:11,444 - INFO - 127.0.0.1 - - [01/Jul/2025 14:01:11] "[36mGET /static/IndexEx.css HTTP/1.1[0m" 304 -
+2025-07-01 14:01:11,444 - INFO - 127.0.0.1 - - [01/Jul/2025 14:01:11] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-07-01 14:01:21,062 - INFO - 127.0.0.1 - - [01/Jul/2025 14:01:21] "GET /expresiones/editar/1 HTTP/1.1" 200 -
+2025-07-01 14:01:21,143 - INFO - 127.0.0.1 - - [01/Jul/2025 14:01:21] "GET /static/fromEx.css HTTP/1.1" 200 -
+2025-07-01 14:01:21,145 - INFO - 127.0.0.1 - - [01/Jul/2025 14:01:21] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-07-01 14:10:13,825 - INFO - 127.0.0.1 - - [01/Jul/2025 14:10:13] "GET /expresiones/editar/1 HTTP/1.1" 200 -
+2025-07-01 14:10:13,869 - INFO - 127.0.0.1 - - [01/Jul/2025 14:10:13] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-07-01 14:10:13,874 - INFO - 127.0.0.1 - - [01/Jul/2025 14:10:13] "[36mGET /static/fromEx.css HTTP/1.1[0m" 304 -
+2025-07-01 14:10:28,263 - INFO - 127.0.0.1 - - [01/Jul/2025 14:10:28] "GET /expresiones/editar/1 HTTP/1.1" 200 -
+2025-07-01 14:10:28,298 - INFO - 127.0.0.1 - - [01/Jul/2025 14:10:28] "GET /static/fromEx.css HTTP/1.1" 200 -
+2025-07-01 14:10:28,304 - INFO - 127.0.0.1 - - [01/Jul/2025 14:10:28] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-07-01 14:12:21,259 - INFO - 127.0.0.1 - - [01/Jul/2025 14:12:21] "GET /expresiones/editar/1 HTTP/1.1" 200 -
+2025-07-01 14:12:21,295 - INFO - 127.0.0.1 - - [01/Jul/2025 14:12:21] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-07-01 14:12:21,297 - INFO - 127.0.0.1 - - [01/Jul/2025 14:12:21] "GET /static/fromEx.css HTTP/1.1" 200 -
+2025-07-01 14:12:59,342 - INFO - 127.0.0.1 - - [01/Jul/2025 14:12:59] "GET /expresiones HTTP/1.1" 200 -
+2025-07-01 14:12:59,394 - INFO - 127.0.0.1 - - [01/Jul/2025 14:12:59] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-07-01 14:12:59,398 - INFO - 127.0.0.1 - - [01/Jul/2025 14:12:59] "GET /static/IndexEx.css HTTP/1.1" 200 -
+2025-07-01 14:13:05,162 - INFO - 127.0.0.1 - - [01/Jul/2025 14:13:05] "GET /expresiones HTTP/1.1" 200 -
+2025-07-01 14:13:05,213 - INFO - 127.0.0.1 - - [01/Jul/2025 14:13:05] "[36mGET /static/IndexEx.css HTTP/1.1[0m" 304 -
+2025-07-01 14:13:05,214 - INFO - 127.0.0.1 - - [01/Jul/2025 14:13:05] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-07-01 14:14:42,801 - INFO - 127.0.0.1 - - [01/Jul/2025 14:14:42] "GET /expresiones HTTP/1.1" 200 -
+2025-07-01 14:14:42,854 - INFO - 127.0.0.1 - - [01/Jul/2025 14:14:42] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-07-01 14:14:42,858 - INFO - 127.0.0.1 - - [01/Jul/2025 14:14:42] "GET /static/IndexEx.css HTTP/1.1" 200 -
+2025-07-01 14:16:17,703 - INFO - 127.0.0.1 - - [01/Jul/2025 14:16:17] "GET /expresiones HTTP/1.1" 200 -
+2025-07-01 14:16:17,740 - INFO - 127.0.0.1 - - [01/Jul/2025 14:16:17] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-07-01 14:16:17,748 - INFO - 127.0.0.1 - - [01/Jul/2025 14:16:17] "GET /static/IndexEx.css HTTP/1.1" 200 -
+2025-07-01 14:23:59,791 - INFO - 127.0.0.1 - - [01/Jul/2025 14:23:59] "GET /expresiones HTTP/1.1" 200 -
+2025-07-01 14:23:59,843 - INFO - 127.0.0.1 - - [01/Jul/2025 14:23:59] "GET /static/IndexEx.css HTTP/1.1" 200 -
+2025-07-01 14:23:59,845 - INFO - 127.0.0.1 - - [01/Jul/2025 14:23:59] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-07-01 14:26:57,193 - INFO - 127.0.0.1 - - [01/Jul/2025 14:26:57] "GET /expresiones HTTP/1.1" 200 -
+2025-07-01 14:26:57,248 - INFO - 127.0.0.1 - - [01/Jul/2025 14:26:57] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-07-01 14:26:57,248 - INFO - 127.0.0.1 - - [01/Jul/2025 14:26:57] "[36mGET /static/IndexEx.css HTTP/1.1[0m" 304 -
+2025-07-01 14:30:16,977 - INFO - 127.0.0.1 - - [01/Jul/2025 14:30:16] "GET /expresiones HTTP/1.1" 200 -
+2025-07-01 14:30:17,034 - INFO - 127.0.0.1 - - [01/Jul/2025 14:30:17] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-07-01 14:30:17,034 - INFO - 127.0.0.1 - - [01/Jul/2025 14:30:17] "[36mGET /static/IndexEx.css HTTP/1.1[0m" 304 -
+2025-07-01 14:33:55,063 - INFO - 127.0.0.1 - - [01/Jul/2025 14:33:55] "GET /expresiones HTTP/1.1" 200 -
+2025-07-01 14:33:55,120 - INFO - 127.0.0.1 - - [01/Jul/2025 14:33:55] "[36mGET /static/IndexEx.css HTTP/1.1[0m" 304 -
+2025-07-01 14:33:55,120 - INFO - 127.0.0.1 - - [01/Jul/2025 14:33:55] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-07-01 14:36:53,712 - INFO - 127.0.0.1 - - [01/Jul/2025 14:36:53] "GET /expresiones/editar/18 HTTP/1.1" 200 -
+2025-07-01 14:36:53,790 - INFO - 127.0.0.1 - - [01/Jul/2025 14:36:53] "[36mGET /static/fromEx.css HTTP/1.1[0m" 304 -
+2025-07-01 14:36:53,797 - INFO - 127.0.0.1 - - [01/Jul/2025 14:36:53] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-07-01 14:38:53,351 - INFO - 127.0.0.1 - - [01/Jul/2025 14:38:53] "GET /expresiones/editar/18 HTTP/1.1" 200 -
+2025-07-01 14:38:53,388 - INFO - 127.0.0.1 - - [01/Jul/2025 14:38:53] "GET /static/fromEx.css HTTP/1.1" 200 -
+2025-07-01 14:38:53,394 - INFO - 127.0.0.1 - - [01/Jul/2025 14:38:53] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-07-01 14:42:44,796 - INFO - 127.0.0.1 - - [01/Jul/2025 14:42:44] "GET /expresiones/editar/18 HTTP/1.1" 200 -
+2025-07-01 14:42:44,847 - INFO - 127.0.0.1 - - [01/Jul/2025 14:42:44] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-07-01 14:42:44,848 - INFO - 127.0.0.1 - - [01/Jul/2025 14:42:44] "GET /static/fromEx.css HTTP/1.1" 200 -
+2025-07-01 14:43:34,625 - INFO - 127.0.0.1 - - [01/Jul/2025 14:43:34] "GET /expresiones/editar/18 HTTP/1.1" 200 -
+2025-07-01 14:43:34,671 - INFO - 127.0.0.1 - - [01/Jul/2025 14:43:34] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-07-01 14:43:34,671 - INFO - 127.0.0.1 - - [01/Jul/2025 14:43:34] "[36mGET /static/fromEx.css HTTP/1.1[0m" 304 -
+2025-07-01 14:43:39,796 - INFO - 127.0.0.1 - - [01/Jul/2025 14:43:39] "GET /expresiones HTTP/1.1" 200 -
+2025-07-01 14:43:39,843 - INFO - 127.0.0.1 - - [01/Jul/2025 14:43:39] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-07-01 14:43:39,844 - INFO - 127.0.0.1 - - [01/Jul/2025 14:43:39] "[36mGET /static/IndexEx.css HTTP/1.1[0m" 304 -
+2025-07-01 14:43:43,617 - INFO - 127.0.0.1 - - [01/Jul/2025 14:43:43] "GET /expresiones/crear HTTP/1.1" 200 -
+2025-07-01 14:43:43,662 - INFO - 127.0.0.1 - - [01/Jul/2025 14:43:43] "[36mGET /static/fromEx.css HTTP/1.1[0m" 304 -
+2025-07-01 14:43:43,668 - INFO - 127.0.0.1 - - [01/Jul/2025 14:43:43] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-07-01 14:43:45,330 - INFO - 127.0.0.1 - - [01/Jul/2025 14:43:45] "GET /expresiones HTTP/1.1" 200 -
+2025-07-01 14:43:45,376 - INFO - 127.0.0.1 - - [01/Jul/2025 14:43:45] "[36mGET /static/IndexEx.css HTTP/1.1[0m" 304 -
+2025-07-01 14:43:45,383 - INFO - 127.0.0.1 - - [01/Jul/2025 14:43:45] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-07-01 14:43:46,547 - INFO - 127.0.0.1 - - [01/Jul/2025 14:43:46] "GET /expresiones/editar/1 HTTP/1.1" 200 -
+2025-07-01 14:43:46,593 - INFO - 127.0.0.1 - - [01/Jul/2025 14:43:46] "[36mGET /static/fromEx.css HTTP/1.1[0m" 304 -
+2025-07-01 14:43:46,602 - INFO - 127.0.0.1 - - [01/Jul/2025 14:43:46] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-07-01 14:43:47,897 - INFO - 127.0.0.1 - - [01/Jul/2025 14:43:47] "GET /expresiones HTTP/1.1" 200 -
+2025-07-01 14:43:47,935 - INFO - 127.0.0.1 - - [01/Jul/2025 14:43:47] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-07-01 14:43:47,937 - INFO - 127.0.0.1 - - [01/Jul/2025 14:43:47] "[36mGET /static/IndexEx.css HTTP/1.1[0m" 304 -
+2025-07-01 14:43:48,531 - INFO - 127.0.0.1 - - [01/Jul/2025 14:43:48] "GET /expresiones/crear HTTP/1.1" 200 -
+2025-07-01 14:43:48,571 - INFO - 127.0.0.1 - - [01/Jul/2025 14:43:48] "[36mGET /static/fromEx.css HTTP/1.1[0m" 304 -
+2025-07-01 14:43:48,576 - INFO - 127.0.0.1 - - [01/Jul/2025 14:43:48] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-07-01 14:43:49,934 - INFO - 127.0.0.1 - - [01/Jul/2025 14:43:49] "GET /expresiones HTTP/1.1" 200 -
+2025-07-01 14:43:49,990 - INFO - 127.0.0.1 - - [01/Jul/2025 14:43:49] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -
+2025-07-01 14:43:49,991 - INFO - 127.0.0.1 - - [01/Jul/2025 14:43:49] "[36mGET /static/IndexEx.css HTTP/1.1[0m" 304 -
+2025-07-01 14:59:53,393 - INFO - 127.0.0.1 - - [01/Jul/2025 14:59:53] "GET /expresiones HTTP/1.1" 200 -
+2025-07-01 14:59:53,449 - INFO - 127.0.0.1 - - [01/Jul/2025 14:59:53] "[36mGET /static/IndexEx.css HTTP/1.1[0m" 304 -
+2025-07-01 14:59:53,449 - INFO - 127.0.0.1 - - [01/Jul/2025 14:59:53] "[36mGET /static/logoBlanco.png HTTP/1.1[0m" 304 -

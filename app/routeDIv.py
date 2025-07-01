@@ -617,7 +617,15 @@ def filtro_informe():
     usuarios = [row[0] for row in cursor.fetchall()]
     conn.close()
 
-    return render_template('filtro_informe.html', usuarios=usuarios)
+    rol = session.get('rol')
+    usuario_actual = session.get('user')
+
+    return render_template(
+        'filtro_informe.html',
+        usuarios=usuarios,
+        rol=rol,
+        usuario_actual=usuario_actual
+    )
 
 @app.route('/ver_resultados', methods=['GET'])
 def ver_resultados():

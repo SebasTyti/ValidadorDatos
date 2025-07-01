@@ -1,159 +1,279 @@
- :root {
-            --color-rojo-urosario: #b31b1b;
-            --color-azul-urosario: #1a3e72;
-            --color-rojo-oscuro: #b30000;
-            --color-gris-bordes: #dee2e6;
-            --color-fondo-tabla: #f8f9fa;
-        }
+/* Fondo y cuadro principal */
+body {
+    background: linear-gradient(135deg, #f8f9fa 60%, #e11d48 100%);
+    min-height: 100vh;
+}
 
-        body {
-            background: linear-gradient(135deg, #1e3a8a, #e11d48);
-            color: #212529;
-            margin: 0;
-            padding: 0;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            font-family: 'Segoe UI', 'Roboto', sans-serif;
-        }
+.main-content {
+    background: linear-gradient(120deg, #fff 80%, #f8f9fa 100%);
+    border-radius: 22px;
+    box-shadow: 0 8px 32px rgba(161,15,43,0.18), 0 2px 8px #e11d4822;
+    border-top: 6px solid #a10f2b;
+    border-left: 2px solid #e11d48;
+    border-right: 2px solid #e11d48;
+    padding: 40px 32px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    max-width: 600px;
+    width: 100%;
+    transition: box-shadow 0.2s, transform 0.2s;
+    position: relative;
+}
+.main-content:hover {
+    box-shadow: 0 12px 40px rgba(161,15,43,0.22), 0 4px 16px #e11d4844;
+    transform: translateY(-2px) scale(1.01);
+}
 
-        .header-universidad {
-            background-color: var(--color-rojo-urosario);
-            color: white;
-            padding: 1rem 0;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
+/* Header */
+.header-universidad {
+    background: linear-gradient(90deg, #e11d48 80%, #a10f2b 100%);
+    color: #fff;
+    padding: 0.7rem 0 0.3rem 0;
+    box-shadow: 0 2px 10px rgba(161,15,43,0.08);
+    border-radius: 0 0 18px 18px;
+    margin-bottom: 0;
+}
+.logo-header {
+    height: 80px;
+    transition: transform 0.3s;
+}
+.logo-header:hover {
+    transform: scale(1.05);
+}
+.header-title-box {
+    background: #fff;
+    color: #a10f2b;
+    border-radius: 0 0 14px 14px;
+    font-weight: 700;
+    box-shadow: 0 2px 8px #e11d4822;
+    padding: 0.4rem 1.2rem;
+    margin-left: 0.5rem;
+    margin-bottom: -0.7rem;
+    display: inline-block;
+    font-size: 1.6rem;
+    letter-spacing: 1px;
+}
+@media (max-width: 600px) {
+    .logo-header { height: 48px; }
+    .header-title-box { font-size: 1.1rem; padding: 0.2rem 0.7rem;}
+    .main-content { padding: 1rem; }
+}
 
-        footer {
-            background-color: var(--color-rojo-oscuro);
-            color: white;
-            padding: 15px 0;
-            margin-top: auto;
-        }
-        .main-content {
-            background-color: white;
-            border-radius: 8px;
-            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
-            margin: 2rem auto;
-            padding: 2rem;
-            width: 95%;
-        }
+/* Título sección */
+.titulo-seccion {
+    color: #a10f2b;
+    font-weight: 700;
+    border-bottom: 2px solid #e11d48;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+    letter-spacing: 0.5px;
+    background: linear-gradient(90deg, #fff 60%, #f8f9fa 100%);
+    border-radius: 8px 8px 0 0;
+}
 
-        .titulo-seccion {
-            color: var(--color-azul-urosario);
-            font-weight: 600;
-            border-bottom: 2px solid var(--color-gris-bordes);
-            padding-bottom: 0.5rem;
-            margin-bottom: 1.5rem;
-        }
+/* Formularios */
+.form-label {
+    color: #1e3a8a;
+    font-weight: 600;
+    margin-bottom: 0.3em;
+}
+.form-control, .form-select {
+    border: 1.5px solid #a10f2b;
+    border-radius: 8px;
+    font-size: 1.08rem;
+    padding: 12px 14px;
+    transition: border-color 0.18s, box-shadow 0.18s;
+}
+.form-control:focus, .form-select:focus {
+    border-color: #e11d48;
+    box-shadow: 0 0 0 0.2rem rgba(225,29,72,0.13);
+    outline: none;
+}
 
-        /* Tabla profesional con bordes mejorados */
-        .tabla-expresiones {
-            width: 100%;
-            border-collapse: collapse;
-        }
+/* Botones */
+.btn-universidad {
+    background: linear-gradient(90deg, #e11d48 80%, #a10f2b 100%);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 0.6rem 1.4rem;
+    font-weight: 600;
+    font-size: 1.08rem;
+    box-shadow: 0 2px 8px rgba(26,62,114,0.08);
+    transition: all 0.18s;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5em;
+}
+.btn-universidad:hover, .btn-universidad:focus {
+    background: #a10f2b;
+    color: #fff;
+    transform: translateY(-2px) scale(1.03);
+    box-shadow: 0 4px 16px rgba(179,27,27,0.13);
+    outline: none;
+}
 
-        .tabla-expresiones thead th {
-            background-color: var(--color-azul-urosario);
-            color: white;
-            font-weight: 500;
-            padding: 12px 15px;
-            text-align: left;
-            border: 1px solid var(--color-azul-urosario);
-        }
+.btn-volver {
+    background: #fff;
+    color: #a10f2b;
+    border: 2px solid #a10f2b;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: all 0.18s;
+    font-size: 1.08rem;
+    padding: 0.6rem 1.4rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5em;
+}
+.btn-volver:hover, .btn-volver:focus {
+    background: #a10f2b;
+    color: #fff;
+    outline: none;
+}
 
-        .tabla-expresiones tbody td {
-            padding: 12px 15px;
-            border: 1px solid var(--color-gris-bordes);
-            vertical-align: middle;
-        }
+/* Footer */
+footer {
+    background: #b30000;
+    color: #fff;
+    border-radius: 0 0 12px 12px;
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.08);
+    text-align: center;
+    padding: 18px 0 10px 0;
+    margin-top: 48px;
+    font-size: 1.05rem;
+    letter-spacing: 0.5px;
+}
 
-        .tabla-expresiones tbody tr:nth-child(even) {
-            background-color: var(--color-fondo-tabla);
-        }
+/* Animaciones */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
 
-        /* Botones */
-        .btn-universidad {
-            background-color: var(--color-azul-urosario);
-            color: white;
-            border: none;
-            border-radius: 6px;
-            padding: 0.6rem 1.2rem;
-            font-weight: 500;
-            transition: all 0.2s;
-        }
+/* Clases de utilidad */
+.text-center {
+    text-align: center;
+}
+.mb-1 {
+    margin-bottom: 0.25rem;
+}
+.mb-2 {
+    margin-bottom: 0.5rem;
+}
+.mb-3 {
+    margin-bottom: 1rem;
+}
+.p-1 {
+    padding: 0.25rem;
+}
+.p-2 {
+    padding: 0.5rem;
+}
+.p-3 {
+    padding: 1rem;
+}
+.m-0 {
+    margin: 0;
+}
+.mt-0 {
+    margin-top: 0;
+}
+.mt-1 {
+    margin-top: 0.25rem;
+}
+.mt-2 {
+    margin-top: 0.5rem;
+}
+.mt-3 {
+    margin-top: 1rem;
+}
+.opacity-50 {
+    opacity: 0.5;
+}
+.cursor-pointer {
+    cursor: pointer;
+}
 
-        .btn-universidad:hover {
-            background-color: #0d2b57;
-            transform: translateY(-1px);
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
+/* Estilos personalizados adicionales */
+.custom-card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+.custom-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+}
 
-        .btn-editar {
-            background-color: #17a2b8;
-            color: white;
-            border: none;
-            padding: 0.5rem 1rem;
-            border-radius: 4px;
-            margin-right: 5px;
-        }
+.custom-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1.5rem;
+}
+.custom-table th, .custom-table td {
+    border: 1px solid #e11d48;
+    padding: 0.75rem;
+    text-align: left;
+}
+.custom-table th {
+    background: #f8f9fa;
+    font-weight: 700;
+}
+.custom-table tr:nth-child(even) {
+    background: #f2f2f2;
+}
 
-        .btn-eliminar {
-            background-color: #dc3545;
-            color: white;
-            border: none;
-            padding: 0.5rem 1rem;
-            border-radius: 4px;
-        }
+/* Media queries adicionales */
+@media (max-width: 768px) {
+    .main-content {
+        padding: 32px 24px;
+    }
+    .header-title-box {
+        font-size: 1.4rem;
+        padding: 0.3rem 1rem;
+    }
+    .btn-universidad, .btn-volver {
+        font-size: 1rem;
+        padding: 0.5rem 1.2rem;
+    }
+}
 
-        /* Badges */
-        .badge-estado {
-            font-weight: 500;
-            padding: 0.4em 0.75em;
-            border-radius: 1rem;
-            font-size: 0.85em;
-        }
-
-        .activo {
-            background-color: #28a745;
-        }
-
-        .inactivo {
-            background-color: #6c757d;
-        }
-
-        /* Código de expresiones */
-        .expresion-codigo {
-            font-family: 'Courier New', Courier, monospace;
-            font-size: 0.9em;
-            background-color: rgba(0,0,0,0.05);
-            padding: 0.3em 0.6em;
-            border-radius: 0.3em;
-            word-break: break-word;
-            border: 1px solid #ddd;
-            display: inline-block;
-            max-width: 100%;
-            overflow-x: auto;
-        }
-
-        /* Responsivo */
-        @media (max-width: 768px) {
-            .main-content {
-                padding: 1rem;
-                width: 100%;
-            }
-            
-            .tabla-expresiones {
-                font-size: 0.9rem;
-            }
-            
-            .tabla-expresiones thead th,
-            .tabla-expresiones tbody td {
-                padding: 8px 10px;
-            }
-            
-            .btn-editar, .btn-eliminar {
-                padding: 0.4rem 0.8rem;
-                font-size: 0.8rem;
-            }
-        }
+@media (max-width: 576px) {
+    .main-content {
+        padding: 24px 16px;
+    }
+    .header-title-box {
+        font-size: 1.2rem;
+        padding: 0.2rem 0.8rem;
+    }
+    .btn-universidad, .btn-volver {
+        font-size: 0.9rem;
+        padding: 0.4rem 1rem;
+    }
+}

@@ -50,12 +50,16 @@
     <form action="{{ url_for('ver_resultados') }}" method="get" class="row g-3">
         <div class="col-md-4">
             <label for="usuario" class="form-label">Usuario</label>
-            <select id="usuario" name="usuario" class="form-select">
-                <option value="">-- Todos --</option>
-                {% for u in usuarios %}
-                    <option value="{{ u }}">{{ u }}</option>
-                {% endfor %}
-            </select>
+            {% if rol == 'administrador' %}
+                <select id="usuario" name="usuario" class="form-select">
+                    <option value="">-- Todos --</option>
+                    {% for u in usuarios %}
+                        <option value="{{ u }}">{{ u }}</option>
+                    {% endfor %}
+                </select>
+            {% else %}
+                <input type="text" id="usuario" name="usuario" class="form-control" value="{{ usuario_actual }}" readonly>
+            {% endif %}
         </div>
         <div class="col-md-4">
             <label for="fecha_inicio" class="form-label">Desde</label>

@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -8,28 +7,98 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
     <link rel="stylesheet" href="{{ url_for('static', filename='IndexEx.css') }}">
+    <style>
+        /* Botones de acción neutros, color institucional solo en hover */
+        .btn-editar {
+            background: #f3f3f3;
+            color: #1e3a8a;
+            border: 1.5px solid #1e3a8a22;
+            border-radius: 6px;
+            padding: 0.5rem 1.1rem;
+            font-weight: 500;
+            transition: all 0.18s;
+        }
+        .btn-editar:hover, .btn-editar:focus {
+            background: #17a2b8;
+            color: #fff;
+            border-color: #138496;
+            transform: translateY(-1px) scale(1.03);
+            outline: none;
+        }
+        .btn-eliminar {
+            background: #f3f3f3;
+            color: #b30000;
+            border: 1.5px solid #b3000022;
+            border-radius: 6px;
+            padding: 0.5rem 1.1rem;
+            font-weight: 500;
+            transition: all 0.18s;
+        }
+        .btn-eliminar:hover, .btn-eliminar:focus {
+            background: #dc3545;
+            color: #fff;
+            border-color: #b30000;
+            transform: translateY(-1px) scale(1.03);
+            outline: none;
+        }
+        /* Encabezado mejorado */
+        .header-universidad {
+            background: linear-gradient(90deg, #e11d48 80%, #a10f2b 100%);
+            color: #fff;
+            padding: 0.7rem 0 0.3rem 0;
+            box-shadow: 0 2px 10px rgba(161,15,43,0.08);
+            border-radius: 0 0 18px 18px;
+            margin-bottom: 0;
+        }
+        .header-universidad .logo-header {
+            height: 80px;
+            transition: transform 0.3s;
+        }
+        .header-universidad .logo-header:hover {
+            transform: scale(1.05);
+        }
+        .header-title-box {
+            background: #fff;
+            color: #a10f2b;
+            border-radius: 0 0 14px 14px;
+            font-weight: 700;
+            box-shadow: 0 2px 8px #e11d4822;
+            padding: 0.4rem 1.2rem;
+            margin-left: 0.5rem;
+            margin-bottom: -0.7rem;
+            display: inline-block;
+            font-size: 1.6rem;
+            letter-spacing: 1px;
+        }
+        @media (max-width: 600px) {
+            .header-universidad .logo-header { height: 48px; }
+            .header-title-box { font-size: 1.1rem; padding: 0.2rem 0.7rem;}
+        }
+    </style>
 </head>
 <body>
-    <header class="header-universidad">
-        <div class="container">
-            <div class="d-flex justify-content-between align-items-center">
-                <h1 class="h4 mb-0">Expresiones Regulares</h1>
-              <img src="{{ url_for('static', filename='logoBlanco.png') }}" alt="Logo" class="me-3" style="height: 100px;">
+    <header class="header-universidad mb-4 shadow-sm">
+        <div class="container d-flex justify-content-between align-items-center py-2">
+            <div class="d-flex align-items-center">
+                <img src="{{ url_for('static', filename='logoBlanco.png') }}" alt="Logo Universidad del Rosario" class="me-3 logo-header" style="height: 80px;">
+                <span class="fs-4 fw-bold mb-0" style="background:#fff;color:#a10f2b;letter-spacing:1px;padding:0.4rem 1.2rem;border-radius:0 0 14px 14px;box-shadow:0 2px 8px #e11d4822;">Validador de Archivos</span>
             </div>
+            <a href="{{ url_for('cerrar_sesion') }}" class="btn btn-cerrar-sesion d-flex align-items-center gap-2">
+                <i class="bi bi-box-arrow-right"></i> Cerrar Sesión
+            </a>
         </div>
     </header>
 
-    <main class="container">
-        <div class="main-content">
+    <main class="container d-flex justify-content-center">
+        <div class="main-content w-100">
             <div class="d-flex justify-content-between align-items-center mb-4">
-                <h2 class="titulo-seccion h5">Listado de Expresiones</h2>
-                <a href="{{ url_for('expresiones_crear') }}" class="btn btn-universidad">
-                    <i class="bi bi-plus-lg"></i> Nueva Expresión
+                <h2 class="titulo-seccion h5 mb-0">Listado de Expresiones</h2>
+                <a href="{{ url_for('expresiones_crear') }}" class="btn btn-universidad d-flex align-items-center gap-2">
+                    <i class="bi bi-plus-lg"></i> <span> Nueva Expresión</span>
                 </a>
             </div>
-
             <div class="table-responsive">
-                <table class="table tabla-expresiones">
+                <table class="table tabla-expresiones align-middle">
                     <thead>
                         <tr>
                             <th>Nombre</th>
@@ -53,15 +122,15 @@
                                 </span>
                             </td>
                             <td>
-                                <div class="d-flex">
-                                    <a href="{{ url_for('expresiones_editar', id=e.id_ExpresionRegular) }}" class="btn btn-editar" title="Editar">
-                                        <i class="bi bi-pencil-fill"></i> Editar
+                                <div class="d-flex flex-wrap gap-2">
+                                    <a href="{{ url_for('expresiones_editar', id=e.id_ExpresionRegular) }}" class="btn btn-editar d-flex align-items-center gap-1" title="Editar">
+                                        <i class="bi bi-pencil-fill"></i> <span class="d-none d-md-inline">Editar</span>
                                     </a>
                                     <a href="{{ url_for('expresiones_eliminar', id=e.id_ExpresionRegular) }}" 
-                                       class="btn btn-eliminar" 
+                                       class="btn btn-eliminar d-flex align-items-center gap-1" 
                                        title="Eliminar"
                                        onclick="return confirm('¿Está seguro de eliminar esta expresión?')">
-                                        <i class="bi bi-trash-fill"></i> Eliminar
+                                        <i class="bi bi-trash-fill"></i> <span class="d-none d-md-inline">Eliminar</span>
                                     </a>
                                 </div>
                             </td>
@@ -73,7 +142,7 @@
         </div>
     </main>
 
-    <footer class="text-center py-3">
+    <footer class="text-center py-3 mt-4" style="background-color:#b30000;color:#fff;">
         <div class="container">
             <p class="mb-0">© 2025 Universidad del Rosario. Todos los derechos reservados.</p>
         </div>
