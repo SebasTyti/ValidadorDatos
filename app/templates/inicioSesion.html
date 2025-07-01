@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,64 +7,192 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         html, body {
-            height: 100%;
+            min-height: 100vh;
             margin: 0;
             padding: 0;
-            overflow: hidden; /* Quitar el scroll */
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: linear-gradient(135deg, #e11d48 0%, #a10f2b 100%);
+            color: #fff;
+            overflow-x: hidden;
         }
         body {
             display: flex;
             flex-direction: column;
-            background: linear-gradient(135deg, #1e3a8a, #e11d48);
-            color: #fff;
+            min-height: 100vh;
         }
-        .content-wrapper {
-            flex: 1;
+        .main-login-container {
+            flex: 1 0 auto;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
+            min-height: 0;
+            padding: 24px 8px 0 8px;
         }
-        .card {
-            background-color: #f8f9fa;
+        .login-header {
+            text-align: center;
+            margin-bottom: 10px;
+            animation: fadeInDown 1s;
+        }
+        .login-header img {
+            height: 110px;
+            max-width: 90vw;
+            margin-bottom: 10px;
+            filter: drop-shadow(0 2px 8px #a10f2b88);
+            transition: transform 0.2s;
+            object-fit: contain;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .login-header img:hover {
+            transform: scale(1.05);
+        }
+        .login-header h1 {
+            font-size: 2.3rem;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            color: #fff;
+            margin-bottom: 0;
+            text-shadow: 0 2px 8px #a10f2b33;
+        }
+        .login-card {
+            background: #fff;
+            border-radius: 22px;
+            box-shadow: 0 8px 32px rgba(161,15,43,0.18), 0 2px 8px #e11d4822;
+            padding: 44px 36px 32px 36px;
+            max-width: 390px;
+            width: 100%;
+            color: #a10f2b;
+            border: 2.5px solid #e11d48;
+            animation: fadeInUp 1.2s;
+        }
+        .login-card .form-label {
+            color: #a10f2b;
+            font-weight: 600;
+        }
+        .login-card .btn-primary {
+            background: linear-gradient(90deg, #e11d48 80%, #a10f2b 100%);
             border: none;
-            border-radius: 10px;
+            font-weight: 700;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            transition: all 0.18s;
+            box-shadow: 0 2px 8px #e11d4822;
         }
-        .btn-primary {
-            background-color: #1e3a8a;
-            border-color: #1e3a8a;
+        .login-card .btn-primary:hover {
+            background: #a10f2b;
+            box-shadow: 0 4px 16px #a10f2b33;
         }
-        .btn-primary:hover {
-            background-color: #e11d48;
+        .login-card .form-control:focus {
             border-color: #e11d48;
+            box-shadow: 0 0 0 0.2rem rgba(225,29,72,0.13);
         }
-        a {
-            color: #1e3a8a;
+        .login-card .alert {
+            border-radius: 8px;
+            font-size: 1rem;
+            margin-bottom: 18px;
         }
-        a:hover {
-            color: #e11d48;
+        .footer-ur {
+            background: #a10f2b;
+            color: #fff;
+            text-align: center;
+            padding: 18px 0 10px 0;
+            margin-top: 48px;
+            border-radius: 0 0 16px 16px;
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.08);
+            font-size: 1.05rem;
+            letter-spacing: 0.5px;
         }
-        header {
-            flex-shrink: 0;
+        .login-card .form-control {
+            border-radius: 8px;
+            font-size: 1.08rem;
+            padding: 12px 14px;
         }
-        footer {
-            background-color: #b30000; /* Rojo oscuro */
-            color: #ffffff;
-            flex-shrink: 0;
+        .login-card .form-control::placeholder {
+            color: #b30000b0;
+            opacity: 1;
+        }
+        .login-card .btn-primary:active {
+            transform: scale(0.98);
+        }
+        .password-group {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+        .password-group input[type="password"],
+        .password-group input[type="text"] {
+            padding-right: 44px !important; /* espacio para el botón */
+            /* Ajusta el padding vertical para centrar el ícono */
+            padding-top: 12px !important;
+            padding-bottom: 12px !important;
+        }
+        .toggle-password {
+            position: absolute;
+            right: 14px;
+            top: 0;
+            bottom: 0;
+            margin: auto 0;
+            background: none;
+            border: none;
+            cursor: pointer;
+            z-index: 2;
+            padding: 0;
+            line-height: 1;
+            display: flex;
+            align-items: center;
+            height: 100%;
+        }
+        .toggle-password svg {
+            height: 24px;
+            width: 24px;
+            opacity: 0.8;
+            transition: opacity 0.2s;
+            object-fit: contain;
+            display: block;
+        }
+        .toggle-password.active svg {
+            opacity: 1;
+        }
+        @media (max-width: 600px) {
+            .login-card {
+                padding: 24px 8px 18px 8px;
+                max-width: 97vw;
+            }
+            .login-header img {
+                height: 70px;
+            }
+            .login-header h1 {
+                font-size: 1.3rem;
+            }
+            .toggle-password svg {
+                height: 18px;
+                width: 18px;
+            }
+        }
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-30px);}
+            to { opacity: 1; transform: translateY(0);}
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px);}
+            to { opacity: 1; transform: translateY(0);}
+        }
+        .form-label.px-custom {
+            padding-left: 18px;
+            padding-right: 18px;
         }
     </style>
 </head>
 <body>
-    <header class="bg-danger text-white py-3">
-        <div class="container d-flex align-items-center">
-            <img src="{{ url_for('static', filename='logoBlanco.png') }}" alt="Logo" class="me-3" style="height: 100px;">
-            <h1 class="m-4 container d-flex align-items-center">Validador de Archivos</h1>
+    <div class="main-login-container">
+        <div class="login-header">
+            <img src="{{ url_for('static', filename='logoBlanco.png') }}" alt="Logo Universidad del Rosario">
+            <h1>Validador de Archivos</h1>
         </div>
-    </header>
-
-    <div class="content-wrapper">
-        <div class="card p-4 shadow" style="width: 25rem;">
-            <h3 class="text-center mb-4 text-primary">Inicio de Sesión</h3>
-            
+        <div class="login-card shadow">
+            <h3 class="text-center mb-4" style="color:#e11d48;font-weight:700;">Inicio de Sesión</h3>
             {% with messages = get_flashed_messages(with_categories=true) %}
                 {% if messages %}
                     {% for category, message in messages %}
@@ -72,28 +200,53 @@
                     {% endfor %}
                 {% endif %}
             {% endwith %}
-            
-            <form action="{{ url_for('inicio_sesion') }}" method="POST">
+            <form action="{{ url_for('inicio_sesion') }}" method="POST" autocomplete="off">
                 <div class="mb-3">
-                    <label for="email" class="form-label text-primary">Correo Electrónico</label>
-                    <input type="email" class="form-control" id="email" name="email"
+                    <label for="email" class="form-label">Correo Electrónico</label>
+                    <input type="email" class="form-control form-control-lg" id="email" name="email"
                            placeholder="Ingresa tu correo" required autocomplete="email">
                 </div>
-                <div class="mb-3">
-                    <label for="password" class="form-label text-primary">Contraseña</label>
-                    <input type="password" class="form-control" id="password" name="password"
+                <div class="mb-3 password-group">
+                    <label for="password" class="form-label mb-2 px-3">Contraseña</label>
+                    <input type="password" class="form-control form-control-lg" id="password" name="password"
                            placeholder="Ingresa tu contraseña" required autocomplete="current-password">
+                    <button type="button" class="toggle-password" tabindex="-1" onclick="togglePassword()" aria-label="Mostrar/Ocultar contraseña">
+                        <!-- Ojo abierto -->
+                        <svg id="iconEyeOpen" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#a10f2b" class="bi bi-eye" viewBox="0 0 16 16">
+                            <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.12 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.133 13.133 0 0 1 1.172 8z"/>
+                            <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zm0 1a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3z"/>
+                        </svg>
+                        <!-- Ojo cerrado -->
+                        <svg id="iconEyeClosed" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#a10f2b" class="bi bi-eye-slash" viewBox="0 0 16 16" style="display:none;">
+                            <path d="M13.359 11.238C12.06 12.226 10.21 13 8 13c-2.21 0-4.06-.774-5.359-1.762A13.134 13.134 0 0 1 1.172 8c.058-.087.122-.183.195-.288.335-.48.83-1.12 1.465-1.755C4.12 4.668 5.88 3.5 8 3.5c.86 0 1.67.163 2.414.434l.805-.805A13.134 13.134 0 0 0 8 2.5c-5 0-8 5.5-8 5.5s3 5.5 8 5.5c1.657 0 3.156-.418 4.359-1.238l-.805-.805z"/>
+                            <path d="M11.354 8.354a3 3 0 1 1-4.708-4.708l.708.708A2 2 0 1 0 10 8c0 .256-.049.502-.146.728l.708.708c.197-.226.338-.482.438-.75l.354.354zm-7.708 0a13.134 13.134 0 0 0 1.66 2.043C4.12 11.332 5.88 12.5 8 12.5c2.12 0 3.879-1.168 5.168-2.457A13.134 13.134 0 0 0 14.828 8c-.058-.087-.122-.183-.195-.288-.335-.48-.83-1.12-1.465-1.755C11.88 4.668 10.12 3.5 8 3.5c-.86 0-1.67.163-2.414.434l-.805-.805A13.134 13.134 0 0 1 8 2.5c5 0 8 5.5 8 5.5s-3 5.5-8 5.5c-1.657 0-3.156-.418-4.359-1.238l.805-.805z"/>
+                            <path d="M2.354 1.646a.5.5 0 1 0-.708.708l12 12a.5.5 0 0 0 .708-.708l-12-12z"/>
+                        </svg>
+                    </button>
                 </div>
-                <button type="submit" class="btn btn-primary w-100">Iniciar Sesión</button>
+                <button type="submit" class="btn btn-primary w-100 py-2 mt-2">Iniciar Sesión</button>
             </form>
-           
         </div>
     </div>
-
-    <footer class="text-center py-3">
+    <footer class="footer-ur">
         <p class="mb-0">© 2025 Universidad del Rosario. Todos los derechos reservados.</p>
     </footer>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function togglePassword() {
+            const passwordInput = document.getElementById('password');
+            const iconOpen = document.getElementById('iconEyeOpen');
+            const iconClosed = document.getElementById('iconEyeClosed');
+            if (passwordInput.type === "password") {
+                passwordInput.type = "text";
+                iconOpen.style.display = "none";
+                iconClosed.style.display = "block";
+            } else {
+                passwordInput.type = "password";
+                iconOpen.style.display = "block";
+                iconClosed.style.display = "none";
+            }
+        }
+    </script>
 </body>
 </html>

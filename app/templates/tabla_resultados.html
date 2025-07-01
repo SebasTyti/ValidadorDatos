@@ -69,7 +69,7 @@
         <div class="col-md-4">
             <label for="archivo" class="form-label">Filtrar por archivo:</label>
             <select name="archivo" id="archivo" class="form-select">
-                <option value="">-- Todos --</option>
+                <option value="">  </option>
                 {% for a in archivos %}
                     <option value="{{ a }}" {% if archivo_actual == a %}selected{% endif %}>{{ a }}</option>
                 {% endfor %}
@@ -79,7 +79,7 @@
         <div class="col-md-4">
             <label for="proceso" class="form-label">Filtrar por proceso:</label>
             <select name="proceso" id="proceso" class="form-select">
-                <option value="">-- Todos --</option>
+                <option value="">  </option>
                 {% for p in procesos %}
                     <option value="{{ p }}" {% if proceso_actual == p %}selected{% endif %}>{{ p }}</option>
                 {% endfor %}
@@ -96,6 +96,15 @@
             <label for="fecha_datos_fin" class="form-label">Fecha Datos (fin):</label>
             <input type="date" class="form-control" id="fecha_datos_fin" name="fecha_datos_fin"
                    value="{{ request.args.get('fecha_datos_fin', '') }}">
+        </div>
+
+        <div class="col-md-4">
+            <label for="tipo_reporte" class="form-label">Tipo de reporte:</label>
+            <select name="tipo_reporte" id="tipo_reporte" class="form-select">
+                <option value="">  </option>
+                <option value="valido" {% if request.args.get('tipo_reporte') == 'valido' %}selected{% endif %}>Válido</option>
+                <option value="error" {% if request.args.get('tipo_reporte') == 'error' %}selected{% endif %}>Error</option>
+            </select>
         </div>
 
         <div class="col-md-auto d-flex align-items-end">

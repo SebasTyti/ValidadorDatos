@@ -30,9 +30,11 @@ BASE_DIR = os.path.abspath(os.path.dirname(__file__))
 UPLOAD_FOLDER = os.path.join(BASE_DIR, "Plantillas", "Entrada")
 VALIDATED_FOLDER = os.path.join(BASE_DIR, "Plantillas", "Validados")
 OUTPUT_FOLDER = os.path.join(BASE_DIR, "Plantillas", "Salida")
+ENTRADA_FOLDER = os.path.join(BASE_DIR, "Plantillas", "Entrada")
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 os.makedirs(VALIDATED_FOLDER, exist_ok=True)
 os.makedirs(OUTPUT_FOLDER, exist_ok=True)
+os.makedirs(ENTRADA_FOLDER, exist_ok=True)
 
 # Configuración de carpetas
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
@@ -249,6 +251,7 @@ def validador():
             cursor.execute("""
                 SELECT NombrePlantilla FROM [dbo].[PlantillasValidacion] 
                 WHERE EstadoPlantilla = 'Activo'
+                ORDER BY FechaCarga DESC
             """)
             json_files = [row.NombrePlantilla for row in cursor.fetchall()]
 
@@ -299,25 +302,17 @@ def validador():
         flash(f"Error: No se pudo encontrar el ID para el usuario '{usuario_correo}'.", "error")
         return redirect(url_for('inicio_sesion'))
 
-    # Guardar archivo Excel temporalmente
-    excel_path = os.path.join(app.config['VALIDATED_FOLDER'], file_excel.filename)
-    if os.path.exists(excel_path):
-        historico_dir = os.path.join(BASE_DIR, "Plantillas", "historicos", "Excel")
-        os.makedirs(historico_dir, exist_ok=True)
-        nombre, ext = os.path.splitext(file_excel.filename)
-        # Busca copias existentes
-        patron = os.path.join(historico_dir, f"{nombre}_*{ext}")
-        existentes = glob.glob(patron)
-        # Calcula el siguiente sufijo
-        siguiente = 1
-        while True:
-            nuevo_nombre = f"{nombre}_{siguiente}{ext}"
-            if not os.path.exists(os.path.join(historico_dir, nuevo_nombre)):
-                break
-            siguiente += 1
-        shutil.move(excel_path, os.path.join(historico_dir, nuevo_nombre))
-    file_excel.save(excel_path)
-    
+    validated_folder = app.config['VALIDATED_FOLDER']
+    historicos_folder = os.path.join(BASE_DIR, "Plantillas", "historicos", "Excel")
+    os.makedirs(historicos_folder, exist_ok=True)
+
+    # Debes obtener el nombre de la hoja seleccionada (ajusta según tu lógica)
+    nombre_hoja = request.form.get("hoja_excel") or "Hoja1"  # Cambia esto si tienes el nombre real de la hoja
+
+    # Guarda el archivo Excel versionado y mueve los anteriores a históricos
+    nombre_guardado = guardar_excel_validado(file_excel, process_id, nombre_hoja, validated_folder, historicos_folder)
+    excel_path = os.path.join(validated_folder, nombre_guardado)
+        
     # Obtener plantillaF
     conn = conectar_db()
     if not conn:
@@ -408,7 +403,7 @@ def validador():
                 ) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
             """, (
                 process_id, id_usuario, datetime.now(), estadoValidacion,
-                id_plantilla, file_excel.filename[:50], reporte_texto, 
+                id_plantilla, nombre_guardado[:50], reporte_texto, 
             ))
 
             conn.commit()
@@ -637,6 +632,7 @@ def ver_resultados():
     proceso = request.args.get('proceso')
     fecha_inicio_datos = request.args.get('fecha_datos_inicio')
     fecha_fin_datos = request.args.get('fecha_datos_fin')
+    tipo_reporte = request.args.get('tipo_reporte')  # Nuevo parámetro para el tipo de reporte
 
     conn = None
     cursor = None
@@ -653,6 +649,7 @@ def ver_resultados():
             v.idUsuario,
             v.FechaValidacion,
             v.idEstado,
+            ev.nombreEstado,  -- <--- Agregado aquí
             v.idPlantillasValidacion,
             v.nombreArchivo,
             v.reporte,
@@ -660,6 +657,7 @@ def ver_resultados():
             v.FechaFinDeDatos
         FROM dbo.Validaciones v
         JOIN dbo.usuariosValidador u ON v.idUsuario = u.idUsuario
+        JOIN dbo.estadoValidacion ev ON v.idEstado = ev.idEstado  -- <--- Agregado aquí
         WHERE 1=1
         """
 
@@ -685,6 +683,12 @@ def ver_resultados():
         if fecha_fin_datos:
             query += " AND v.FechaFinDeDatos <= ?"
             params.append(fecha_fin_datos)
+
+        # Filtrar por tipo de reporte (válido o con error)
+        if tipo_reporte == "valido":
+            query += " AND v.idEstado = 1 "  # O el valor que corresponda a "válido" en tu BD
+        elif tipo_reporte == "error":
+            query += " AND v.idEstado = 2 "  # O el valor que corresponda a "error" en tu BD
 
         query += " ORDER BY v.FechaValidacion DESC"
 
@@ -1094,11 +1098,14 @@ def guardar_plantilla():
                 numeros.append(int(partes[-1]))
 
         siguiente_numero = max(numeros) + 1 if numeros else 1
-       
 
-        # Crear nombre final con número consecutivo
+        # Ahora sí puedes crear el nombre final
         nombre_archivo = f"{prefijo_archivo}_{siguiente_numero}.json"
         ruta_archivo = os.path.join(OUTPUT_FOLDER, nombre_archivo)
+
+        nombre_excel_salida = nombre_archivo.replace('.json', '.xlsx')
+        ruta_excel_salida = os.path.join(ENTRADA_FOLDER, nombre_excel_salida)
+        shutil.copy(uploaded_excel, ruta_excel_salida)
 
 
         # Guardar JSON en archivo
@@ -1136,9 +1143,8 @@ def guardar_plantilla():
         conn.commit()
 
         return jsonify({
-            "success": True, 
-            "download_url": url_for("descargar_archivo", nombre_archivo=nombre_archivo),
-            "db_id": id_insertado
+            "success": True,
+            "nombre_json": nombre_archivo  # Ejemplo: DITIC_PRUEBA_texto2_Hoja1_4.json
         })
 
     except Exception as e:
@@ -1194,6 +1200,15 @@ def descargar_archivo(nombre_archivo):
         flash("No se pudo acceder al archivo.", "danger")
         return redirect(url_for('admin_gestion_plantillas'))
 
+
+@app.route('/descargar_excel/<nombre_archivo>')
+def descargar_excel(nombre_archivo):
+    ENTRADA_FOLDER = os.path.join(BASE_DIR, "Plantillas", "Entrada")
+    ruta_excel = os.path.join(ENTRADA_FOLDER, nombre_archivo)
+    if not os.path.exists(ruta_excel):
+        flash("No se encontró el archivo Excel.", "danger")
+        return redirect(url_for('admin_gestion_plantillas'))
+    return send_from_directory(ENTRADA_FOLDER, nombre_archivo, as_attachment=True)
 
 def obtener_rol_usuario(email):
     """
@@ -1265,10 +1280,9 @@ def parse_fecha_datetime_local(fecha_str):
 
 def limpiar_validados_y_mover_a_historicos():
     """
-    Deja solo el archivo más reciente (por fecha de modificación) de cada base de nombre y mes/año en Validados (Excel)
-    y Salida (JSON), y mueve los demás a la carpeta historicos/Excel o historicos/Json.
+    Deja solo el archivo con el número mayor (ej: archivo_3.xlsx) de cada base en Validados,
+    y mueve los demás a la carpeta historicos/Excel.
     """
-    # --- EXCEL ---
     validados_dir = os.path.join(BASE_DIR, "Plantillas", "Validados")
     historicos_excel_dir = os.path.join(BASE_DIR, "Plantillas", "historicos", "Excel")
     os.makedirs(historicos_excel_dir, exist_ok=True)
@@ -1280,13 +1294,13 @@ def limpiar_validados_y_mover_a_historicos():
         match = patron_excel.match(archivo)
         if match:
             base = match.group(1)
-            ruta = os.path.join(validados_dir, archivo)
-            fecha_mod = datetime.fromtimestamp(os.path.getmtime(ruta))
-            clave = (base, fecha_mod.year, fecha_mod.month)
-            grupos_excel.setdefault(clave, []).append((archivo, fecha_mod))
+            numero = int(match.group(2)) if match.group(2) else 0
+            grupos_excel.setdefault(base, []).append((archivo, numero))
 
-    for clave, archivos_base in grupos_excel.items():
+    for base, archivos_base in grupos_excel.items():
+        # Ordena por número final (de menor a mayor)
         archivos_base.sort(key=lambda x: x[1])
+        # Deja solo el de mayor número en Validados, mueve los demás a históricos
         for antiguo, _ in archivos_base[:-1]:
             origen = os.path.join(validados_dir, antiguo)
             destino = os.path.join(historicos_excel_dir, antiguo)
@@ -1328,11 +1342,7 @@ def ver_archivo_historico(tipo_archivo, archivo):
         carpeta = os.path.join(base_dir, "Json")
     # Seguridad: evita rutas relativas peligrosas
     archivo = os.path.basename(archivo)
-    try:
-        return send_from_directory(carpeta, archivo, as_attachment=True)
-    except Exception as e:
-        flash(f"No se pudo acceder al archivo: {str(e)}", "danger")
-        return redirect(url_for('ver_historicos', tipo_archivo=tipo_archivo))
+    return redirect(url_for('ver_historicos', tipo_archivo=tipo_archivo))
 
 @app.route('/ver_json_historico/<archivo>')
 def ver_json_historico(archivo):
@@ -1367,3 +1377,37 @@ def ver_json(nombre_archivo):
             })
         else:
             return jsonify({'error': 'No se pudo leer el archivo'}), 404
+
+def guardar_excel_validado(file_excel, proceso, hoja, validated_folder, historicos_folder):
+    proceso = str(proceso).replace(" ", "")
+    hoja = str(hoja).replace(" ", "")
+    nombre_base, ext = os.path.splitext(file_excel.filename)
+    prefijo_archivo = f"{proceso}_{nombre_base}_{hoja}"
+    nombre_final, siguiente = obtener_nombre_versionado(prefijo_archivo, ".xlsx", validated_folder)
+
+    # Mueve los existentes a históricos
+    patron = re.compile(rf"^{prefijo_archivo}_(\d+)\.xlsx$", re.IGNORECASE)
+    existentes = [f for f in os.listdir(validated_folder) if patron.match(f)]
+    for f in existentes:
+        shutil.move(os.path.join(validated_folder, f), os.path.join(historicos_folder, f))
+
+    ruta_final = os.path.join(validated_folder, nombre_final)
+    file_excel.save(ruta_final)
+    return nombre_final, siguiente
+
+def obtener_nombre_versionado(prefijo, extension, carpeta):
+    """
+    Busca archivos existentes con el mismo prefijo y extensión en la carpeta,
+    y retorna el nombre con el siguiente número consecutivo.
+    """
+    archivos_existentes = [
+        f for f in os.listdir(carpeta)
+        if f.startswith(prefijo) and f.endswith(extension)
+    ]
+    numeros = []
+    for nombre in archivos_existentes:
+        partes = nombre.replace(extension, "").split("_")
+        if len(partes) >= 4 and partes[-1].isdigit():
+            numeros.append(int(partes[-1]))
+    siguiente_numero = max(numeros) + 1 if numeros else 1
+    return f"{prefijo}_{siguiente_numero}{extension}", siguiente_numero

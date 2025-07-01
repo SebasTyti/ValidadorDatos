@@ -6,39 +6,117 @@
     <title>Cargar Archivo JSON</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Estilos personalizados -->
+    <!-- Bootstrap Icons CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
     <style>
         body {
-            background-color: #d3bdbdd8;
+            background: linear-gradient(135deg, #f8f9fa 60%, #e11d48 100%);
+            min-height: 100vh;
+            font-family: 'Segoe UI', Arial, sans-serif;
         }
-        .container {
-            margin-top: 50px;
+        .main-card {
+            background: #fff;
+            border-radius: 18px;
+            box-shadow: 0 4px 24px rgba(161,15,43,0.10);
+            padding: 40px 32px;
+            margin-top: 40px;
+            margin-bottom: 40px;
         }
-        .card {
-            box-shadow: 0 4px 8px rgba(239, 15, 15, 0.1);
-            border: none;
+        .titulo-rojo {
+            background: linear-gradient(90deg, #e11d48 80%, #a10f2b 100%);
+            color: #fff;
+            border-radius: 12px;
+            font-size: 1.5rem;
+            font-weight: 700;
+            padding: 18px 0;
+            text-align: center;
+            letter-spacing: 1px;
+            box-shadow: 0 2px 10px rgba(225,29,72,0.07);
+            margin-bottom: 32px;
         }
-        .card-header {
-            background-color: #fc000069;
-            color: rgb(255, 255, 255);
-        }
-        .btn-primary {
-            background-color: #e92727;
-            border-color: #020406;
-        }
-        .btn-primary:hover {
-            background-color: #010509;
-            border-color: #002244;
+        .form-label {
+            color: #1e3a8a;
+            font-weight: 600;
         }
         .form-control {
-            border: 1px solid #003366;
+            border: 1.5px solid #a10f2b;
+            border-radius: 8px;
+            font-size: 1.08rem;
+            padding: 12px 14px;
         }
         .form-control:focus {
-            border-color: #002244;
-            box-shadow: 0 0 0 0.2rem rgba(0, 51, 102, 0.25);
+            border-color: #e11d48;
+            box-shadow: 0 0 0 0.2rem rgba(225,29,72,0.13);
         }
-        label {
-            color: #003366;
+        .btn-primary {
+            background: linear-gradient(90deg, #e11d48 80%, #a10f2b 100%);
+            border: none;
+            font-weight: 700;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            transition: all 0.18s;
+            box-shadow: 0 2px 8px #e11d4822;
+        }
+        .btn-primary:hover {
+            background: #a10f2b;
+            color: #fff;
+        }
+        .btn-outline-light {
+            border-width: 2px;
+            font-weight: 600;
+            border-radius: 10px;
+            transition: all 0.18s;
+        }
+        .btn-outline-light:hover {
+            background: #fff;
+            color: #a10f2b !important;
+            border-color: #fff;
+        }
+        .btn-light {
+            background: #fff;
+            color: #a10f2b;
+            border: 2px solid #a10f2b;
+            font-weight: 600;
+            border-radius: 10px;
+            transition: all 0.18s;
+        }
+        .btn-light:hover {
+            background: #a10f2b;
+            color: #fff;
+        }
+        .card-header {
+            background: #a10f2b;
+            color: #fff;
+            border-radius: 16px 16px 0 0;
+            text-align: center;
+            font-size: 1.3rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+        .card {
+            border: none;
+            border-radius: 16px;
+            box-shadow: 0 4px 16px rgba(161,15,43,0.10);
+        }
+        footer {
+            background: #a10f2b;
+            color: #fff;
+            border-radius: 0 0 12px 12px;
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.08);
+            text-align: center;
+            padding: 18px 0 10px 0;
+            margin-top: 48px;
+            font-size: 1.05rem;
+            letter-spacing: 0.5px;
+        }
+        @media (max-width: 768px) {
+            .main-card {
+                padding: 18px 5px;
+            }
+            .titulo-rojo {
+                font-size: 1.1rem;
+                padding: 12px 0;
+            }
         }
     </style>
 </head>
@@ -58,67 +136,69 @@
         </div>
     {% endif %}
     {% endwith %}
-    <header class="bg-danger text-white py-3 mb-4">
-        <div class="container d-flex align-items-center justify-content-between">
+    <header class="bg-danger text-white py-3 mb-4 shadow-sm">
+        <div class="container d-flex justify-content-between align-items-center">
             <div class="d-flex align-items-center">
-                <img src="{{ url_for('static', filename='logoBlanco.png') }}"onclick="window.location.href='{{ url_for('index_page') }}'" alt="Logo" class="me-3" style="height: 100px;">
-                <h1 class="m-4">Validador de archivos</h1>
+                <img src="{{ url_for('static', filename='logoBlanco.png') }}" alt="Logo" class="me-3" style="height: 80px; cursor:pointer;" >
+                <h1 class="fs-4 fw-bold mb-0" style="letter-spacing:1px;">Validador de Archivos</h1>
             </div>
-            <div>
-                <button type="button" class="btn btn-outline-light me-2"onclick="window.location.href='{{ url_for('index_page') }}'">Volver</button>
-                <button type="button" class="btn btn-outline-light me-2"onclick="window.location.href='{{ url_for('index') }}'">Crear Plantilla</button>
-                <button type="button" class="btn btn-outline-light"onclick="window.location.href='{{ url_for('cerrar_sesion') }}'">Cerrar Sesión</button>
+            <div class="d-flex align-items-center gap-3">
+                <a href="{{ url_for('index_page') }}"
+                   class="btn btn-outline-light btn-lg d-flex align-items-center gap-2 px-3 fw-semibold">
+                    <i class="bi bi-arrow-left"></i> Volver
+                </a>
+                <a href="{{ url_for('cerrar_sesion') }}"
+                   class="btn btn-light btn-lg d-flex align-items-center gap-2 px-3 fw-semibold"
+                   style="color:#a10f2b;">
+                    <i class="bi bi-box-arrow-right"></i> Cerrar Sesión
+                </a>
             </div>
         </div>
     </header>
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-md-6">
-                <div class="card">
-                    <div class="card-header text-center">
-                        <h1 class="card-title">Cargar Archivo JSON</h1>
+            <div class="col-lg-7 col-md-10">
+                <div class="main-card">
+                    <div class="titulo-rojo">
+                        <i class="bi bi-file-earmark-plus-fill me-2"></i>
+                        Cargar Archivo JSON
                     </div>
-                    <div class="card-body">
-                        <form action="{{ url_for('cargar_plantilla') }}" method="post" enctype="multipart/form-data">
-                            <div class="mb-3">
-                                <label for="file_json" class="form-label">Selecciona un archivo JSON</label>
-                                <input type="file" class="form-control" id="file_json" name="file_json" accept=".json" required>
-                            </div>
-                            
-                            <div class="mb-3">
-                                <label for="processSelect">Seleccione su proceso:</label>
-                                <select id="processSelect" class="form-control" name="processSelect" required>
-                                    <option value="" disabled selected>Seleccione su proceso...</option>
-                                    {% for proceso in procesos %}
-                                        <option value="{{ proceso.idProcesoAdmin }}">{{ proceso.nombreProcesoAdmin }}</option>
-                                    {% endfor %}
-                                </select>
-                            </div>
-
-                            <div class="d-grid">
-                                <button type="submit" class="btn btn-primary">Subir Archivo</button>
-                            </div>
-                        </form>
-                        {% with messages = get_flashed_messages(with_categories=true) %}
-                        {% if messages %}
-                            <ul>
-                            {% for category, message in messages %}
-                                <li class="{{ category }}">{{ message }}</li>
-                            {% endfor %}
-                            </ul>
-                        {% endif %}
-                        {% endwith %}
-                    </div>
+                    <form action="{{ url_for('cargar_plantilla') }}" method="post" enctype="multipart/form-data">
+                        <div class="mb-4">
+                            <label for="file_json" class="form-label">Selecciona un archivo JSON</label>
+                            <input type="file" class="form-control" id="file_json" name="file_json" accept=".json" required>
+                        </div>
+                        <div class="mb-4">
+                            <label for="processSelect" class="form-label">Seleccione su proceso:</label>
+                            <select id="processSelect" class="form-control" name="processSelect" required>
+                                <option value="" disabled selected>Seleccione su proceso...</option>
+                                {% for proceso in procesos %}
+                                    <option value="{{ proceso.idProcesoAdmin }}">{{ proceso.nombreProcesoAdmin }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-primary btn-lg d-flex align-items-center gap-2 justify-content-center">
+                                <i class="bi bi-upload"></i> Subir Archivo
+                            </button>
+                        </div>
+                    </form>
+                    {% with messages = get_flashed_messages(with_categories=true) %}
+                    {% if messages %}
+                        <ul>
+                        {% for category, message in messages %}
+                            <li class="{{ category }}">{{ message }}</li>
+                        {% endfor %}
+                        </ul>
+                    {% endif %}
+                    {% endwith %}
                 </div>
             </div>
         </div>
     </div>
-    <footer class="bg-danger text-white text-center py-3 mt-5" style="position: fixed; bottom: 0; width: 100%;">
-        <p class="mb-0">© 2025 Universidad del rosario. Todos los derechos reservados.</p>
+    <footer>
+        <p class="mb-0">© 2025 Universidad del Rosario. Todos los derechos reservados.</p>
     </footer>
-
-    <!-- Bootstrap JS y dependencias -->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

@@ -180,7 +180,43 @@ document.addEventListener('DOMContentLoaded', function () {
                 .then(result => {
                     if (result.success) {
                         alert("Plantilla guardada exitosamente.");
-                        window.location.href = result.download_url;
+
+                        // Mostrar botones de descarga
+                        const btnContainer = document.querySelector('.btn-container');
+                        if (btnContainer && result.nombre_json) {
+                            // Elimina botones previos si existen
+                            const prevBtns = document.getElementById('descarga-btns');
+                            if (prevBtns) prevBtns.remove();
+
+                            // Crea el contenedor de botones
+                            const descargaDiv = document.createElement('div');
+                            descargaDiv.id = 'descarga-btns';
+                            descargaDiv.className = 'mt-3 d-flex gap-2';
+
+                            // Botón JSON
+                            const btnJson = document.createElement('a');
+                            btnJson.href = `/descargar_archivo/${result.nombre_json}`;
+                            btnJson.className = 'btn btn-primary';
+                            btnJson.innerHTML = '<i class="bi bi-filetype-json"></i> Descargar JSON';
+
+                            // Botón Excel
+                            const nombreExcel = result.nombre_json.replace('.json', '.xlsx');
+                            const btnExcel = document.createElement('a');
+                            btnExcel.href = `/descargar_excel/${nombreExcel}`;
+                            btnExcel.className = 'btn btn-success';
+                            btnExcel.innerHTML = '<i class="bi bi-file-earmark-excel"></i> Descargar Excel';
+
+                            descargaDiv.appendChild(btnJson);
+                            descargaDiv.appendChild(btnExcel);
+                            btnContainer.appendChild(descargaDiv);
+                        }
+
+                        // Descargar JSON automáticamente
+                        window.open(`/descargar_archivo/${result.nombre_json}`, '_blank');
+
+                        // Descargar Excel automáticamente
+                        const nombreExcel = result.nombre_json.replace('.json', '.xlsx');
+                        window.open(`/descargar_excel/${nombreExcel}`, '_blank');
                     } else {
                         showError(result.error, "error-message");
                         console.error("Detalles del error:", result);
